@@ -16,6 +16,7 @@
     <a href="concepts.html">Key Concepts</a>
     <a href="references.html">References</a>
     <a href="about.html">About</a>
+    <a href="quiz.html">Quiz</a>
   </nav>
 </header>
 
@@ -27,9 +28,20 @@
     <li>Web App Manifest defines app settings</li>
     <li>Caching allows offline use</li>
   </ul>
+  <h3>Additional Technologies</h3>
+<ul>
+  <li><b>App Shell:</b> Basic structure of the app that loads quickly</li>
+  <li><b>Background Sync:</b> Allows data to sync when internet returns</li>
+  <li><b>Push API:</b> Enables notifications even when the browser is closed</li>
+</ul>
+
+<h3>Workflow Explanation</h3>
+<p>When a user visits a PWA, the service worker installs and caches essential files. After that, future visits load instantly from cache instead of the network.</p>
 
   <!-- PWA diagram image -->
-  <img src="images/Pwaimage.jpg" width="300">
+  <div class="image-container">
+  <img src="images/Pwaimage.jpg" alt="PWA diagram">
+</div>
   <p>The diagram shows the key compoents.</p>
   <p><em> Image Source: <a href = "https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/">Microsoft Edge PWA Docs</a></em></p>
 </section>

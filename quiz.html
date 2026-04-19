@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PWA Quiz</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.correct { color: green; font-weight: bold; }
+.incorrect { color: red; font-weight: bold; }
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PWA Knowledge Quiz</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="benefits.html">Benefits</a>
+    <a href="concepts.html">Key Concepts</a>
+    <a href="references.html">References</a>
+    <a href="about.html">About</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<section>
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<h3>1. PWAs use _______ to enable offline functionality.</h3>
+<input type="text" id="q1">
+
+<!-- Q2 -->
+<h3>2. What enables caching and offline support?</h3>
+<input type="radio" name="q2" value="wrong"> HTML<br>
+<input type="radio" name="q2" value="correct"> Service Worker<br>
+<input type="radio" name="q2" value="wrong"> CSS<br>
+
+<!-- Q3 -->
+<h3>3. Which file defines a PWA’s configuration?</h3>
+<input type="radio" name="q3" value="wrong"> index.html<br>
+<input type="radio" name="q3" value="correct"> manifest.json<br>
+<input type="radio" name="q3" value="wrong"> style.css<br>
+
+<!-- Q4 -->
+<h3>4. PWAs require which protocol for security?</h3>
+<input type="radio" name="q4" value="correct"> HTTPS<br>
+<input type="radio" name="q4" value="wrong"> HTTP<br>
+<input type="radio" name="q4" value="wrong"> FTP<br>
+
+<!-- Q5 -->
+<h3>5. Select ALL PWA features:</h3>
+<input type="checkbox" name="q5" value="correct"> Offline support<br>
+<input type="checkbox" name="q5" value="correct"> App-like experience<br>
+<input type="checkbox" name="q5" value="wrong"> Requires App Store installation<br>
+
+<!-- Q6 -->
+<h3>6. Which are advantages of PWAs?</h3>
+<input type="checkbox" name="q6" value="correct"> Lower development cost<br>
+<input type="checkbox" name="q6" value="correct"> Cross-platform compatibility<br>
+<input type="checkbox" name="q6" value="wrong"> Requires app store approval<br>
+
+<!-- Q7 -->
+<h3>7. Which are limitations of PWAs?</h3>
+<input type="checkbox" name="q7" value="correct"> Limited iOS support<br>
+<input type="checkbox" name="q7" value="correct"> Not as powerful as native apps<br>
+<input type="checkbox" name="q7" value="wrong"> Always faster than native apps<br>
+
+<br>
+
+<button type="button" onclick="gradeQuiz()">Submit Quiz</button>
+<button type="button" onclick="resetQuiz()">Reset</button>
+
+</form>
+
+<div id="results" class="result-box"></div>
+
+</section>
+
+<footer>
+<p>Created for educational purposes</p>
+</footer>
+
+<script>
+function gradeQuiz() {
+  let score = 0;
+  let output = "";
+
+  // Q1
+  let q1 = document.getElementById("q1").value.toLowerCase();
+  if (q1.includes("service worker")) {
+    score++;
+    output += "<p class='correct'>Q1 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q1 Incorrect — Correct Answer: Service Worker</p>";
+  }
+
+  // Q2
+  let q2 = document.querySelector('input[name="q2"]:checked');
+  if (q2 && q2.value === "correct") {
+    score++;
+    output += "<p class='correct'>Q2 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q2 Incorrect — Correct Answer: Service Worker</p>";
+  }
+
+  // Q3
+  let q3 = document.querySelector('input[name="q3"]:checked');
+  if (q3 && q3.value === "correct") {
+    score++;
+    output += "<p class='correct'>Q3 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q3 Incorrect — Correct Answer: manifest.json</p>";
+  }
+
+  // Q4
+  let q4 = document.querySelector('input[name="q4"]:checked');
+  if (q4 && q4.value === "correct") {
+    score++;
+    output += "<p class='correct'>Q4 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q4 Incorrect — Correct Answer: HTTPS</p>";
+  }
+
+  // Q5
+  let q5 = document.querySelectorAll('input[name="q5"]');
+  let correct5 = true;
+
+  q5.forEach(cb => {
+    if ((cb.checked && cb.value !== "correct") ||
+        (!cb.checked && cb.value === "correct")) {
+      correct5 = false;
+    }
+  });
+
+  if (correct5) {
+    score++;
+    output += "<p class='correct'>Q5 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q5 Incorrect — Correct Answers: Offline support, App-like experience</p>";
+  }
+
+  // Q6
+  let q6 = document.querySelectorAll('input[name="q6"]');
+  let correct6 = true;
+
+  q6.forEach(cb => {
+    if ((cb.checked && cb.value !== "correct") ||
+        (!cb.checked && cb.value === "correct")) {
+      correct6 = false;
+    }
+  });
+
+  if (correct6) {
+    score++;
+    output += "<p class='correct'>Q6 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q6 Incorrect — Correct Answers: Lower development cost, Cross-platform compatibility</p>";
+  }
+
+  // Q7
+  let q7 = document.querySelectorAll('input[name="q7"]');
+  let correct7 = true;
+
+  q7.forEach(cb => {
+    if ((cb.checked && cb.value !== "correct") ||
+        (!cb.checked && cb.value === "correct")) {
+      correct7 = false;
+    }
+  });
+
+  if (correct7) {
+    score++;
+    output += "<p class='correct'>Q7 Correct</p>";
+  } else {
+    output += "<p class='incorrect'>Q7 Incorrect — Correct Answers: Limited iOS support, Not as powerful as native apps</p>";
+  }
+
+  // Final result
+  let result = (score >= 4)
+    ? "<h2 class='correct'>PASS</h2>"
+    : "<h2 class='incorrect'>FAIL</h2>";
+
+  document.getElementById("results").innerHTML =
+    result + "<h3>Total Score: " + score + "/7</h3>" + output;
+}
+
+function resetQuiz() {
+  document.getElementById("quizForm").reset();
+  document.getElementById("results").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
