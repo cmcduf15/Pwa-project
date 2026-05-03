@@ -4,6 +4,7 @@ body {
   margin: 0;
   background: #f4f4f4;
   line-height: 1.6;
+  font-size: 16px;
 }
 
 /* Header styling */
@@ -19,7 +20,8 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 /* Navigation links */
@@ -63,25 +65,78 @@ table {
 td, th {
   border: 1px solid #ccc;
   padding: 10px;
+  text-align: left;
 }
 
 /* Correct answers */
 .correct {
   color: green;
+  font-weight: bold;
 }
 
 /* Incorrect answers */
 .incorrect {
   color: red;
+  font-weight: bold;
 }
+
+/* Image styling */
 .image-container {
   margin-top: 20px;
+  text-align: center;
 }
 
 .image-container img {
-  width: 80%;
+  width: 100%;
   max-width: 700px;
+  height: auto;
   border-radius: 10px;
-  display: block;   /* important */
-  margin-left: 0;   /* pushes it to the left */
+}
+
+/* Button styling */
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+
+   /*Tablet view*/
+@media screen and (max-width: 768px) {
+
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*Mobile view*/
+@media screen and (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
 }

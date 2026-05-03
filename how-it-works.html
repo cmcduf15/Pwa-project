@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How PWAs Work</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -35,10 +37,13 @@
   <li><b>Push API:</b> Enables notifications even when the browser is closed</li>
 </ul>
 
-<h3>Workflow Explanation</h3>
+<h3>Lifecycle of a PWA</h3>
 <p>When a user visits a PWA, the service worker installs and caches essential files. After that, future visits load instantly from cache instead of the network.</p>
-
-  <!-- PWA diagram image -->
+<p>On future visits, the browser checks the cache first instead of relying on the network. If the user is offline, the cached content is still displayed, allowing the app to function without interruption.</p>
+<h3>Why PWAs Feel Like Native Apps</h3>
+<p>PWAs feel like native applications because they load quickly, can be installed on a device without an app store, and continue working even when the internet connection is weak or unavailable.</p>
+  
+<!-- PWA diagram image -->
   <div class="image-container">
   <img src="images/Pwaimage.jpg" alt="PWA diagram">
 </div>

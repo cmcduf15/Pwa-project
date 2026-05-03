@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Key Concepts</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -56,6 +58,12 @@
   <li><b>IndexedDB:</b> Stores large amounts of offline data</li>
   <li><b>Cache API:</b> Controls what gets stored offline</li>
 </ul>
+<h3>Core PWA Technologies Explained</h3>
+
+  <p><b>Service Workers:</b> Service workers are scripts that run in the background separate from the main browser thread. They allow PWAs to intercept network requests, cache important files, and provide offline functionality. They follow a lifecycle that includes installation, activation, and fetch events.</p>
+  <p><b>Caching Strategies:</b> PWAs use caching strategies such as cache-first (loading from stored data before network requests) and network-first (fetching fresh data when available). This improves speed and reliability.</p>
+  <p><b>Web App Manifest:</b> The Web App Manifest is a JSON file that controls how the app appears when installed. It defines the app name, icons, theme color, and display mode (standalone or browser mode).</p>
+  <p><b>Push Notifications:</b> Push notifications allow PWAs to re-engage users even when the browser is closed. They rely on service workers and external push services to deliver updates.</p>
 
 <h3>Why These Matter</h3>
 <p>These technologies ensure PWAs remain fast, responsive, and reliable under different network conditions.</p>
